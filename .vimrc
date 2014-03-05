@@ -40,6 +40,7 @@ syntax on
 filetype on
 filetype plugin indent on
 
+let g:nerdtree_tabs_open_on_console_startup=1
 let g:pyflakes_use_quickfix = 0
 let mapleader = ","  
 let g:pep8_map = '<leader>8'
@@ -117,10 +118,10 @@ exec 'set viminfo=%,' . &viminfo
 "-------------------------------------------------
 " Bind keys to move around window splits
 "-------------------------------------------------
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-map <C-h> <C-w>h
+"map <C-j> <C-w>j
+"map <C-k> <C-w>k
+"map <C-l> <C-w>l
+"map <C-h> <C-w>h
 "-------------------------------------------------
 " Task lists
 "-------------------------------------------------
@@ -138,10 +139,18 @@ map <leader>r :RopeRename<CR>
 " Searching
 " ------------------------------------------------
 nmap <leader>a <Esc>:Ack!
-
-
-
-
+"-------------------------------------------------
+" NERDTree hotkeys
+"-------------------------------------------------
+map <leader>n :NERDTreeTabsToggle<CR>
+map <leader>t :NERDTreeToggle<CR>
+"-------------------------------------------------
+" Tabs
+"-------------------------------------------------
+map <C-n> :tabnew<CR>
+map <C-c> :tabclose<CR>
+map <C-l> :tabn<CR>
+map <C-k> :tabp<CR>
 
 
 "function InsertTabWrapper()
@@ -176,7 +185,7 @@ imap <F3>       <ESC>:!perldoc -f <c-r>=expand("<cword>")<CR><CR>
 " map <F5>  <ESC>:!grep  -rn . --regexp=<c-r>=expand("<cword>")<CR> \| tee /tmp/z
 "call togglebg#map("<F5>")
 
-map <leader>n :NERDTreeToggle<CR>
+"map <leader>n :NERDTreeToggle<CR>
 imap <F11>       <ESC>:bprev<CR>
  map <F11>       <ESC>:bprev<CR>
 imap <F12>       <ESC>:bnext<CR>
@@ -185,17 +194,17 @@ imap <F12>       <ESC>:bnext<CR>
 imap <C-p>  <ESC><INS>print "\033[1;31m%s\033[0m" % (<C-R>=expand('<cword>')<CR>
  map <C-p>  <ESC><INS>print "\033[1;31m%s\033[0m" % (<C-R>=expand('<cword>')<CR>
 
-highlight WhitespaceEOL ctermbg=Red ctermfg=White guibg=Red
-match WhitespaceEOL /\s\+$/
+"highlight WhitespaceEOL ctermbg=Red ctermfg=White guibg=Red
+"match WhitespaceEOL /\s\+$/
 
-highlight WhitespaceBOL ctermbg=DarkRed ctermfg=White guibg=DarkRed
-match WhitespaceBOL /^\s\+$/
+"highlight WhitespaceBOL ctermbg=DarkRed ctermfg=White guibg=DarkRed
+"match WhitespaceBOL /^\s\+$/
 
-highlight Tabs ctermbg=DarkRed ctermfg=White guibg=DarkRed
-match Tabs /\t\+/
+"highlight Tabs ctermbg=DarkRed ctermfg=White guibg=DarkRed
+"match Tabs /\t\+/
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
 
 autocmd BufWritePre *.py,*.tmpl,*.css,*.cc,*.cpp,*.h,*.hpp :%s/\s\+$//e
 "autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
