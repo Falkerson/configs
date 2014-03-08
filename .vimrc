@@ -94,8 +94,8 @@ endif
 "set linebreak
 "set nobackup
 "set noswapfile
-"set encoding=utf-8
-"set fileencodings=utf8,cp1251
+set encoding=utf-8
+set fileencodings=utf8,cp1251
 set t_Co=256
 
 "set complete=""
@@ -111,7 +111,6 @@ set t_Co=256
 "  n... : where to save the viminfo files
 set viminfo='10,\"100,:20,%,n~/.viminfo
 exec 'set viminfo=%,' . &viminfo
-
 
 
 
@@ -169,13 +168,8 @@ map <C-k> :tabp<CR>
 "imap <C-V> "+gPi
 "imap <c-r>=InsertTabWrapper()
 
-"map  <C-l> :tabn<CR>
-"map  <C-h> :tabp<CR>
-"map  <C-n> :tabnew<CR>
-
 imap <F1>       <ESC>:Man <c-r>=expand("<cword>")<CR><CR>
  map <F1>       <ESC>:Man <c-r>=expand("<cword>")<CR><CR>
-
 imap <F2>       <ESC>:w<CR>
  map <F2>       <ESC>:w<CR>
 imap <F3>       <ESC>:!perldoc -f <c-r>=expand("<cword>")<CR><CR>
@@ -185,7 +179,6 @@ imap <F3>       <ESC>:!perldoc -f <c-r>=expand("<cword>")<CR><CR>
 " map <F5>  <ESC>:!grep  -rn . --regexp=<c-r>=expand("<cword>")<CR> \| tee /tmp/z
 "call togglebg#map("<F5>")
 
-"map <leader>n :NERDTreeToggle<CR>
 imap <F11>       <ESC>:bprev<CR>
  map <F11>       <ESC>:bprev<CR>
 imap <F12>       <ESC>:bnext<CR>
@@ -213,8 +206,8 @@ autocmd BufWritePre *.py,*.tmpl,*.css,*.cc,*.cpp,*.h,*.hpp :%s/\s\+$//e
 "autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 "autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 "autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-"autocmd VimEnter * NERDTree
-"autocmd BufEnter * NERDTreeMirror
+autocmd VimEnter * NERDTree
+autocmd BufEnter * NERDTreeMirror
 
 augroup JumpCursorOnEdit
 au!
