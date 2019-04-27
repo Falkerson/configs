@@ -15,6 +15,7 @@ call plug#end() " runs 'filetype plugin indent on' and 'syntax enabled'
 
 colorscheme gruvbox
 
+let g:gruvbox_contrast_dark = "hard" " Make background more contrast
 let g:airline#extensions#tabline#enabled = 1 "Enable smart tab in airline
 
 set autoindent
