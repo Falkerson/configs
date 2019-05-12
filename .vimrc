@@ -30,6 +30,8 @@ endtry
 call plug#begin($VIMHOME . '/plugged')
 Plug 'morhetz/gruvbox'                                 " Colorschema gruvbox: https://github.com/morhetz/gruvbox
 Plug 'vim-airline/vim-airline'                         " Status bar line: https://github.com/vim-airline/vim-airline
+Plug 'vim-airline/vim-airline-themes'                  " A collection of themes for vim-airline: https://github.com/vim-airline/vim-airline-themes
+Plug 'powerline/powerline-fonts'                       " Patched fonts for Powerline users: https://github.com/powerline/fonts
 Plug 'scrooloose/nerdtree'                             " A tree explorer plugin: https://github.com/scrooloose/nerdtree
 Plug 'liuchengxu/vista.vim'                            " Viewer & Finder for LSP symbols and tags in Vim: http://liuchengxu.org/vista.vim
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Semantic Highlighting for Python in Neovim: https://github.com/numirias/semshi
@@ -40,10 +42,10 @@ colorscheme gruvbox
 
 let g:gruvbox_contrast_dark = "hard"         " Make background more contrast
 let g:airline#extensions#tabline#enabled = 1 " Enable smart tab in airline
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 let g:NERDTreeQuitOnOpen = 1                 " Close NERDTree when buffer is open
 
-set encoding=utf-8
+"set encoding=utf-8
 set autoindent
 set showmatch
 set smarttab
