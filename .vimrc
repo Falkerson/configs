@@ -45,18 +45,18 @@ let g:airline#extensions#tabline#enabled = 1 " Enable smart tab in airline
 let g:airline_powerline_fonts = 1
 let g:NERDTreeQuitOnOpen = 1                 " Close NERDTree when buffer is open
 
-"set encoding=utf-8
-set autoindent
+set encoding=utf-8
+set autoindent     " Enable automatically indent the next new line to maatch the indent of previous one
+set colorcolumn=80 " Show columns at 80
 set showmatch
 set smarttab
-set noshowmode    " Hide NORMAL/INSERT/VISUAL mode highlight, because it's done in vim-airline
-" Configure tabulation
-set tabstop=4     " Replace existing tab with 4 spaces width
-set shiftwidth=4  " Move with 4 spaces when '>' pressed
-set expandtab     " Insert 4 spaces when Tab pressed
-set termguicolors " In case of iTerm2 it gives TRUECOLORs for editor
-set number        " Display line numbers
-set nowrap        " Don't wrap text
+set noshowmode     " Hide NORMAL/INSERT/VISUAL mode highlight, because it's done in vim-airline
+set tabstop=4      " Replace existing tab with 4 spaces width
+set shiftwidth=4   " Move with 4 spaces when '>' pressed
+set expandtab      " Insert 4 spaces when Tab pressed
+set termguicolors  " In case of iTerm2 it gives TRUECOLORs for editor
+set number         " Display line numbers
+set nowrap         " Don't wrap text
 
 " KEY BINDINGS
 
@@ -64,4 +64,5 @@ set nowrap        " Don't wrap text
 nnoremap <silent> <leader>1 :NERDTreeToggle<CR> 
 " Remove search highlights
 nnoremap <silent> <space> :nohlsearch<CR>
-
+" Remap semicolon and get rid Shift
+nnoremap ; :
